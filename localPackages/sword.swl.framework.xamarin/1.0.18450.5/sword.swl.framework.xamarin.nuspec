@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Sword.Swl.Framework.Xamarin</id>
+    <version>1.0.18450.5</version>
+    <authors>Sword SWL</authors>
+    <owners>Sword SWL</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://lyon-tfs17.sword-group.com/tfs/Swl-DA/Sword-Frameworks/_git/Sword.Swl.Framework.Xamarin</projectUrl>
+    <description>Xamarin framework developed by Sword SWL</description>
+    <copyright>Copyright ©  2018</copyright>
+    <repository type="git" url="https://lyon-tfs17.sword-group.com/tfs/Swl-DA/Sword-Frameworks/_git/Sword.Swl.Framework.Xamarin" commit="041e06e83d8bfbf6a60cd6ae2ac51883b6aef7e3" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Autofac" version="4.8.1" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="11.0.2" exclude="Build,Analyzers" />
+        <dependency id="Xamarin.Forms" version="4.6.0.1073" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

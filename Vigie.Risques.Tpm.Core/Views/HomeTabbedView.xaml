@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<view:ViewBase xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Vigie.Risques.Tpm.Core.Views.HomeTabbedView"  
+             xmlns:uc="clr-namespace:Vigie.Risques.Tpm.Core.Controls"
+             xmlns:vm="clr-namespace:Vigie.Risques.Tpm.Core.ViewModels"
+             xmlns:view="clr-namespace:Sword.Swl.Framework.Xamarin.Views;assembly=Sword.Swl.Framework.Xamarin"
+             xmlns:local="clr-namespace:Vigie.Risques.Tpm.Core.Views"
+             xmlns:ext="clr-namespace:Sword.Swl.Framework.Xamarin.Extensions;assembly=Sword.Swl.Framework.Xamarin"           
+             x:TypeArguments="vm:HomeTabbedViewModel, uc:HomeTabbedRootViewControl"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False"
+             HasNavigationBar="True">
+
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <CarouselView ItemsSource="{Binding CarouselItems}"
+                      CurrentItem="{Binding CarouselItemSelected, Mode=TwoWay}"
+                      x:Name="carousel"
+                      IsSwipeEnabled="False"
+                      Grid.Row="0">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <ContentView Content="{Binding Content}"/>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+        <Grid BackgroundColor="{StaticResource BlueSecondaryColor}"
+              Grid.Row="1">
+
+            <uc:TableItemsControl 
+                ItemsSource="{Binding CarouselItems}"
+                MaxItems="4" 
+                NumberOfColumns="4"
+                SelectedItem="{Binding CarouselItemSelected, Mode=TwoWay}"
+                Spacing="0" 
+                ItemsSpacing="0">
+                <uc:TableItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid BackgroundColor="{Binding TitleBackgroundColor}" Padding="0" HeightRequest="60">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Row="1" Text="{Binding Title}" TextColor="{Binding TitleForegroundColor}" HorizontalTextAlignment="Center"/>
+                        </Grid>
+                    </DataTemplate>
+                </uc:TableItemsControl.ItemTemplate>
+            </uc:TableItemsControl>
+        </Grid>
+    </Grid>
+
+</view:ViewBase>

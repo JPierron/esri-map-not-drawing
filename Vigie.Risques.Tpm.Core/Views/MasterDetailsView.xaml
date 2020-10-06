@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<view:MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Vigie.Risques.Tpm.Core.Views.MasterDetailsView"
+             xmlns:uc="clr-namespace:Vigie.Risques.Tpm.Core.Controls"
+             xmlns:vm="clr-namespace:Vigie.Risques.Tpm.Core.ViewModels"
+             xmlns:view="clr-namespace:Sword.Swl.Framework.Xamarin.Views;assembly=Sword.Swl.Framework.Xamarin"
+             xmlns:local="clr-namespace:Vigie.Risques.Tpm.Core.Views"
+             xmlns:ext="clr-namespace:Sword.Swl.Framework.Xamarin.Extensions;assembly=Sword.Swl.Framework.Xamarin"                
+             x:TypeArguments="vm:MasterDetailsViewModel, uc:RootViewControl"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False"
+             HasNavigationBar="False"
+             Padding="0">
+
+    <MasterDetailPage.Master>
+        <local:SideMenuView x:Name="masterPage" Title="SideMenu"/>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage x:Name="detailsNavPage">
+            <x:Arguments>
+                <local:HomeTabbedView Title="HomeView"/>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+
+
+</view:MasterDetailPage>

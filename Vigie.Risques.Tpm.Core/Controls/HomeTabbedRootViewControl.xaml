@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Vigie.Risques.Tpm.Core.Controls.HomeTabbedRootViewControl"
+             xmlns:uc="clr-namespace:Vigie.Risques.Tpm.Core.Controls"
+             RowSpacing="0">
+
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="15"/>
+    </Grid.RowDefinitions>
+
+    <Grid Grid.Row="1" x:Name="ViewContent">
+        <!--Contenu de la page-->
+    </Grid>
+
+    <!--Header-->
+    <Grid x:Name="NavigationBar" 
+          ColumnSpacing="0" 
+          BackgroundColor="{StaticResource MainColor}"
+          HeightRequest="60">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <ImageButton Source="ic_menu.png"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Center"
+                     HeightRequest="50"
+                     WidthRequest="50"
+                     Command="{Binding OpenMenuCommand}"
+                     BackgroundColor="Transparent"/>
+
+        <Label Text="Test App" FontSize="Large" VerticalOptions="Center" Padding="15,0,0,0" TextColor="White"
+               Grid.Column="1"/>
+
+    </Grid>
+
+    <uc:FooterControl Grid.Row="2" />
+
+    <Grid IsVisible="{Binding IsBusy}" Grid.RowSpan="3" BackgroundColor="#7F000000">
+        <StackLayout VerticalOptions="Center">
+            <ActivityIndicator IsRunning="True" HeightRequest="50" WidthRequest="100"/>
+        </StackLayout>
+    </Grid>
+
+</Grid>

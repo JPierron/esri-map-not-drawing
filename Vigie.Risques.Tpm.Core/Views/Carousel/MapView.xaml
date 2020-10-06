@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<local:CarouselItemViewBase
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Class="Vigie.Risques.Tpm.Core.Views.MapView"
+    xmlns:local="clr-namespace:Vigie.Risques.Tpm.Core.Views.Carousel"
+    xmlns:behaviors="clr-namespace:Vigie.Risques.Tpm.Core.Utils.Behaviors"
+    xmlns:esri="clr-namespace:Esri.ArcGISRuntime.Xamarin.Forms;assembly=Esri.ArcGISRuntime.Xamarin.Forms"
+    xmlns:resources="clr-namespace:Vigie.Risques.Tpm.Core.Resources"
+    NavigationPage.HasNavigationBar="False"
+    HasNavigationBar="False">
+
+    <ContentView>
+        <AbsoluteLayout>
+            <esri:MapView x:Name="TpmMapView" Map="{Binding TpmMap, Mode=TwoWay}" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+        </AbsoluteLayout>
+    </ContentView>
+</local:CarouselItemViewBase>
